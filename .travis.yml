@@ -27,7 +27,7 @@ before_script:
 
   # Install DKAN 
   - drush make --prepare-install dkan_distro.make --yes
-  - drush si dkan --sites-subdir=default --db-url=mysql://root:@127.0.0.1/dkan_travis --account-name=admin --account-pass=admin  --site-name="DKAN" --yes
+  - drush si dkan --sites-subdir=default --db-url=mysql://root:@127.0.0.1/dkan_travis --account-name=admin --account-pass=admin  --site-name="DKAN" --install_configure_form.update_status_module='array(FALSE,FALSE)' --yes
   - drush cc all --yes
 
   # Setup display for selenium
