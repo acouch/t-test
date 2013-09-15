@@ -1,6 +1,6 @@
 {
     "require": {
-        "drupal/drupal-extension": "*",
+        "drupal/drupal-extension": "*"
     },
     "minimum-stability": "dev",
     "config": {
