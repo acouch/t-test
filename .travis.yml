@@ -26,6 +26,12 @@ install:
 before_script:
 
   # Install DKAN 
+  - cd ../
+  - mkdir profiles
+  - mv classic profiles/
+  - mkdir drupal
+  - mv profiles drupal/
+  - cd drupal
   - drush make --prepare-install dkan_distro.make --yes
   - drush si dkan --sites-subdir=default --db-url=mysql://root:@127.0.0.1/dkan_travis --account-name=admin --account-pass=admin  --site-name="DKAN" --yes
   - drush cc all --yes
@@ -42,7 +48,7 @@ before_script:
   - sleep 5
 
 script:
-  - cd drupal/profiles/buck/tests/behat
+  - cd drupal/profiles/dkan/tests/behat
   # behat.yml includes behat.local.yml so it must exist
   - touch behat.local.yml
   - ./bin/behat
