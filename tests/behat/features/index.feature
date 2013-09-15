@@ -7,6 +7,10 @@ Feature: Homepage
     Given I am on the homepage
     Then I should see "Welcome to the DKAN Demo"
 
+  Scenario: Viewing default content
+    Given I am on the homepage
+    Then I should see "Wisconsin Polling Places"
+
   @api
   Scenario: Logging into the site
     Given I am logged in as a user with the "authenticated user" role
