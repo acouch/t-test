@@ -28,7 +28,7 @@ before_script:
   # Install DKAN 
   - cd ../
   - mkdir profiles
-  - mv classic profiles/
+  - mv dkan profiles/
   - mkdir drupal
   - mv profiles drupal/
   - cd drupal
