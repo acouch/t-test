@@ -8,4 +8,4 @@ Feature: Search
     Given I am on "/"
     When I fill in "query" with "Madison"
     And I press "edit-submit-dataset"
-    Then I should see "Madison Polling Places"
+    Then I should see "Wisconsin Polling Places"
