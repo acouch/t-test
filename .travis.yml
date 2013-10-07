@@ -13,7 +13,7 @@ install:
   - composer install
   - mysql -e 'create database dkan_travis;'
   - pear channel-discover pear.drush.org
-  - pear install drush/drush-5.4.0
+  - pear install drush/drush
   - phpenv rehash
 
 before_script:
@@ -30,7 +30,7 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - sleep 3
   - DRUSH_PATH="$(which drush)"
-  - sudo $DRUSH_PATH --root=$PWD --server=builtin runserver 80 &
+  - sudo $DRUSH_PATH --root=$PWD --server=builtin runserver :8888 &
   - sleep 4
   - cd ../
 
