@@ -29,14 +29,14 @@ before_script:
   - sleep 4s
 
   # Setup display for selenium
-  #- export DISPLAY=:99.0
-  #- sh -e /etc/init.d/xvfb start
-  #- sleep 3
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
   - cd ../
 
-  #- wget http://selenium.googlecode.com/files/selenium-server-standalone-2.35.0.jar
-  #- java -jar selenium-server-standalone-2.35.0.jar -p 4444 &
-  #- sleep 5
+  - wget http://selenium.googlecode.com/files/selenium-server-standalone-2.35.0.jar
+  - java -jar selenium-server-standalone-2.35.0.jar -p 4444 &
+  - sleep 5
 
 script:
   - vendor/bin/behat
