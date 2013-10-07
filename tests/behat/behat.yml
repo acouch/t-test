@@ -1,21 +1,24 @@
 default:
-  paths:
-    features: 'features'
-    bootstrap: 'features/bootstrap'
-  context:
-    parameters:
-      default_browser: 'goutte'
-    class: 'FeatureContext'
+  filters:
+    #tags: "@api"
   extensions:
     Behat\MinkExtension\Extension:
-      base_url:  'http://127.0.0.1:80'
-      selenium2: ~
       goutte: ~
+      selenium2: ~
+      base_url: http://127.0.0.1:80 
       default_session: 'goutte'
       javascript_session: 'selenium2'
     Drupal\DrupalExtension\Extension:
+      api_driver: "drupal"
       blackbox: ~
-      drush:
-        alias: self
-imports:
-  - behat.local.yml
+      drupal:
+        drupal_root: "/home/travis/dkan"
+      region_map:
+        content: "#region-content"
+        footer: "#footer"
+        header: "#section-header"
+        left header: "#header-left"
+        right header: "#header-right"
+        right sidebar: "#column-right"
+      text:
+        log_out: "Logout"
