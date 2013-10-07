@@ -24,7 +24,6 @@ before_script:
   - drush make --prepare-install dkan_distro.make --yes
   - drush si dkan --sites-subdir=default --db-url=mysql://root:@127.0.0.1/dkan_travis --account-name=admin --account-pass=admin  --site-name="DKAN" install_configure_form.update_status_module='array(FALSE,FALSE)' --yes
   - drush cc all --yes
-  - cd ../
 
   # Setup display for selenium
   - export DISPLAY=:99.0
@@ -33,6 +32,7 @@ before_script:
   - DRUSH_PATH="$(which drush)"
   - sudo $DRUSH_PATH --root=$PWD --server=builtin runserver 80 &
   - sleep 4
+  - cd ../
 
   - wget http://selenium.googlecode.com/files/selenium-server-standalone-2.35.0.jar
   - java -jar selenium-server-standalone-2.35.0.jar -p 4444 &
