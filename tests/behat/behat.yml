@@ -12,7 +12,7 @@ default:
       api_driver: "drupal"
       blackbox: ~
       drupal:
-        drupal_root: "/home/travis/dkan"
+        drupal_root: "/home/travis/acouch/t-test/dkan"
       region_map:
         content: "#region-content"
         footer: "#footer"
