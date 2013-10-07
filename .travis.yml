@@ -10,21 +10,17 @@ mysql:
   encoding: utf8
   
 install:
+  - composer install
   - mysql -e 'create database dkan_travis;'
   - pear channel-discover pear.drush.org
   - pear install drush/drush-5.4.0
   - phpenv rehash
-  - cd ./tests/behat
-  - composer install
-  - cd ../../
 
 before_script:
 
   # Install DKAN 
   - git clone --branch 7.x-1.x http://git.drupal.org/project/dkan.git
   - cd dkan
-  - `pwd`
-  - echo `pwd`
   - drush make --prepare-install dkan_distro.make --yes
   - drush si dkan --sites-subdir=default --db-url=mysql://root:@127.0.0.1/dkan_travis --account-name=admin --account-pass=admin  --site-name="DKAN" install_configure_form.update_status_module='array(FALSE,FALSE)' --yes
   - drush cc all --yes
@@ -36,7 +32,7 @@ before_script:
   - sleep 3
   - DRUSH_PATH="$(which drush)"
   - sudo $DRUSH_PATH --root=$PWD --server=builtin runserver 80 &
-  - sleep 3
+  - sleep 4
 
   - wget http://selenium.googlecode.com/files/selenium-server-standalone-2.35.0.jar
   - java -jar selenium-server-standalone-2.35.0.jar -p 4444 &
