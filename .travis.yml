@@ -1,14 +1,14 @@
 language: php
- 
+
 php:
   - 5.3
   - 5.4
- 
+
 mysql:
   database: dkan_travis 
   username: root
   encoding: utf8
-  
+
 install:
   - composer install
   - mysql -e 'create database dkan_travis;'
@@ -19,10 +19,10 @@ install:
   - phpenv rehash
 
 before_script:
-  # Install DKAN 
+  # Install DKAN
   - git clone --branch 7.x-1.x http://git.drupal.org/project/dkan.git
   - cd dkan
-  - drush make --prepare-install dkan_distro.make --yes
+  - drush make --prepare-install build-dkan.make --yes
   - drush si dkan --sites-subdir=default --db-url=mysql://root:@127.0.0.1/dkan_travis --account-name=admin --account-pass=admin  --site-name="DKAN" install_configure_form.update_status_module='array(FALSE,FALSE)' --yes
   - drush cc all --yes
   - drush --quiet --yes --root=$PWD runserver :8888 > /dev/null 2>&1 &
