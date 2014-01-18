@@ -3,7 +3,7 @@
 composer install
 mysql -e 'drop database dkan_travis; create database dkan_travis;'
 
-# Install DKAN 
+# Install DKAN
 git clone --branch 7.x-1.x http://git.drupal.org/project/dkan.git
 cd dkan
 drush make --prepare-install dkan_distro.make --yes
