@@ -26,6 +26,19 @@ Feature: Homepage
     When I click "politics"
     Then I should see "Afghanistan Election Districts"
 
+  @api
+  Scenario: See "Add Dataset"
+    Given I am logged in as a user with the "authenticated user" role
+    And I am on the homepage
+    Then I should see "Add Dataset"
+
+  @api
+  Scenario: See "Dataset Form"
+    Given I am logged in as a user with the "authenticated user" role
+    And I am on the homepage
+    And I click "Add Dataset"
+    Then I should see "Create Dataset"
+
   @javascript
   Scenario: Test header region
     Given I am on the homepage
