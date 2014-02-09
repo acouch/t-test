@@ -21,6 +21,11 @@ Feature: Homepage
     Given I am on the homepage
     Then I should see "powered by DKAN, a project of Nuams"
 
+  Scenario: Viewing tags
+    Given I am on the homepage
+    When I click "politics"
+    Then I should see "Afghanistan Election Districts"
+
   @javascript
   Scenario: Test header region
     Given I am on the homepage
