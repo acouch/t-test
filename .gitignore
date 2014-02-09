@@ -3,4 +3,4 @@
 composer.lock
 vendor
 dkan
-selenium-server-standalone-2.35.0.jar
+selenium-server-standalone-2.3*.0.jar
