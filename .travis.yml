@@ -39,4 +39,4 @@ before_script:
   - sleep 5
 
 script:
-  - bin/behat
+  - vendor/bin/behat
