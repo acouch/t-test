@@ -10,12 +10,12 @@ drush make --prepare-install build-dkan.make --yes
 drush si dkan --sites-subdir=default --db-url=mysql://root:@127.0.0.1/dkan_travis --account-name=admin --account-pass=admin  --site-name="DKAN" install_configure_form.update_status_module='array(FALSE,FALSE)' --yes
 drush cc all --yes
 
-drush --root=$PWD --server=builtin runserver 8888 &
+drush --root=$PWD runserver 8888 &
 sleep 4
 cd ../
 
 wget http://selenium.googlecode.com/files/selenium-server-standalone-2.39.0.jar
-java -jar selenium-server-standalone-2.39.0.jar -p 5555 &
+java -jar selenium-server-standalone-2.39.0.jar -p 4444 &
 sleep 5
 
-vendor/bin/behat
+bin/behat
