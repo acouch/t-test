@@ -2,5 +2,6 @@
 *.phar
 composer.lock
 vendor
+bin
 dkan
 selenium-server-standalone-2.3*.0.jar
