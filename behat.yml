@@ -9,9 +9,7 @@ default:
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       drush:
-        alias: self 
-      drupal:
-        drupal_root: "/home/travis/build/acouch/t-test/dkan"
+        root: "dkan" 
       region_map:
         content: "#region-content"
         footer: "#footer"
