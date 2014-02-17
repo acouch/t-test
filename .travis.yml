@@ -14,9 +14,10 @@ install:
   - mysql -e 'create database dkan_travis;'
   - sudo apt-get update > /dev/null
   - sudo apt-get --quiet=2 install php5-cgi php5-curl php5-gd php5-mysql > /dev/null
-  - pear channel-discover pear.drush.org
-  - pear install drush/drush
-  - phpenv rehash
+
+# Install latest Drush 6.
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - composer global require --no-interaction drush/drush:6.*
 
 before_script:
   # Install DKAN
