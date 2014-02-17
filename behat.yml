@@ -7,12 +7,11 @@ default:
       default_session: 'goutte'
       javascript_session: 'selenium2'
     Drupal\DrupalExtension\Extension:
+      blackbox: ~
       drush:
         alias: self 
-      api_driver: "drush"
-      blackbox: ~
       drupal:
-        drupal_root: "dkan"
+        drupal_root: "/home/travis/build/acouch/dkan"
       region_map:
         content: "#region-content"
         footer: "#footer"
