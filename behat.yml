@@ -11,7 +11,7 @@ default:
       drush:
         alias: self 
       drupal:
-        drupal_root: "/home/travis/build/acouch/dkan"
+        drupal_root: "/home/travis/build/acouch/t-test/dkan"
       region_map:
         content: "#region-content"
         footer: "#footer"
