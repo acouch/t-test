@@ -26,7 +26,7 @@ Feature: Datasets
     When I click "Madison Polling Places"
     Then I should see "This is a list and map of polling places in Madison, WI."
       And I should see "Polling_Places_Madison.csv"
-      And I wait for "1" seconds
+      And I wait for "5" seconds
       And I should see "Door Creek Church"
 
   @api @javascript
@@ -55,7 +55,7 @@ Feature: Datasets
       And I attach the file "Polling_Places_Madison.csv" to "files[field_upload_und_0]" 
       And I check "field_upload[und][0][view][grid]"
       And I press "edit-submit"
-      And I wait for "1" seconds
+      And I wait for "5" seconds
     Then I should see "Test Resource Upload has been created"
       And I should see "Glendale Elementary School"
     When I click "Test Dataset"
