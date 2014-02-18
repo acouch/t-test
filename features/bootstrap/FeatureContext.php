@@ -30,4 +30,13 @@ class FeatureContext extends DrupalContext
         $this->getSession()->getPage()->selectFieldOption($select, $option);
     }
 
+    /**
+     * Wait for the given number of seconds. ONLY USE FOR DEBUGGING!
+     *
+     * @Given /^I wait for "([^"]*)" seconds$/
+     */
+    public function iWaitForSeconds($arg1) {
+      sleep($arg1);
+    }
+
 }
