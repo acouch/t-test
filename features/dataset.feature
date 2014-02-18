@@ -68,6 +68,6 @@ Feature: Datasets
     When I am on "dataset/test-dataset"
     Then I should see "Edit"
       And I should see "Add Resource"
-    When I am on"/dataset/wisconsin-polling-places"
+    When I am on "/dataset/wisconsin-polling-places"
     Then I should not see "Edit"
       And I should not see "Add Resource"
