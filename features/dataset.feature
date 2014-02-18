@@ -7,7 +7,7 @@ Feature: Datasets
 
   Scenario: Sharing the Dataset on Twitter 
     Given I am on "/dataset/wisconsin-polling-places"
-    When I click "Facebook"
+    When I click "Twitter"
     Then I should see "Share a link with your followers"
 
   Scenario: Seeing the License 

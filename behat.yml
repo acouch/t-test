@@ -13,6 +13,7 @@ default:
         root: "dkan" 
       region_map:
         content: "#region-content"
+        toolbar: "#toolbar"
         footer: "#footer"
         header: "#section-header"
         left header: "#header-left"
