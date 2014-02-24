@@ -17,6 +17,7 @@ Feature: Datasets
     When I click "Members"
     Then I should see "admin"
     When I click "Group" in the "toolbar" region
+      And I wait for "1" seconds
       And I click "People"
     Then I should see "admin"
     When I check "edit-views-bulk-operations-0"
