@@ -7,10 +7,12 @@ Feature: Datasets
     When I click "Group" in the "toolbar" region
     Then I should see "Add group members."
     When I click "Add people"
+      And I wait for "3" seconds
     Then I should see "ADD A GROUP MEMBER TO DATA EXPLORER EXAMPLES"
     When I fill in "name" with "admin"
-      And I wait for "1" seconds
+      And I wait for "3" seconds
       And I press "edit-submit"
+      And I wait for "3" seconds
     Then I should see "admin has been added to the group Data Explorer Examples."
     When I am on "/group/data-explorer-examples"
     Then I should see "Members"

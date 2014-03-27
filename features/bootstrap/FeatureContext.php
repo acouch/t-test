@@ -31,6 +31,24 @@ class FeatureContext extends DrupalContext
     }
 
     /**
+     * Click on map icon as identified by its z-index.
+     *
+     * @Given /^I click map icon number "([^"]*)"$/
+     */
+    public function iClickMapIcon($num) {
+        $session = $this->getSession();
+        $element = $session->getPage()->find(
+            'xpath',
+            $session->getSelectorsHandler()->selectorToXpath('xpath', '//img[contains(@style,"z-index: ' . $num . '")]')
+
+        );
+        if (null === $element) {
+            throw new \InvalidArgumentException(sprintf('Cannot find map icon: "%s"', $num));
+        }
+        $element->click();
+    }
+
+    /**
      * Wait for the given number of seconds. ONLY USE FOR DEBUGGING!
      *
      * @Given /^I wait for "([^"]*)" seconds$/
