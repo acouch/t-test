@@ -9,7 +9,7 @@ Feature: Homepage
 
   Scenario: Viewing default content
     Given I am on the homepage
-    Then I should see "Wisconsin Polling Places"
+    Then I should see "Geospatial Data Explorer Examples"
 
   Scenario: Viewing top menu
     Given I am on the homepage
