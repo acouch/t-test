@@ -13,8 +13,12 @@ Feature: Groups
     Given I am a "member" of the group "Geospatial Data Explorer Examples"
     When I visit "dataset/wisconsin-polling-places"
     Then I should see "edit"
-    When I click "Madison Polling Places"
-    Then I should see "edit"
+    # Requires https://drupal.org/files/update-groups-issues-2042581.patch
+    #When I click "Madison Polling Places"
+    #Then I should see "edit"
+
+
+
     # Given I am a member of "Geospatial Data Explorer Examples" 
     # When I visit "dataset/wisconsin-polling-places"
     # Then I should see "edit"
@@ -47,6 +51,8 @@ Feature: Groups
     When I click "country-afghanistan"
       Then I should see "Wisconsin Polling Places"
       And I should see "Afghanistan Election Districts"
+
+  @api @javascript
   Scenario: Manage a group as an Editor 
     Given I am logged in as a user with the "editor" role
       And I am on "/group/data-explorer-examples"
