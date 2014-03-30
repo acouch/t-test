@@ -2,6 +2,7 @@
 
 use Drupal\DrupalExtension\Context\DrupalContext;
 use Behat\Behat\Context\Step\Given;
+use Symfony\Component\Process\Process;
 
 require 'vendor/autoload.php';
 
@@ -28,6 +29,23 @@ class FeatureContext extends DrupalContext
         $select = $this->fixStepArgument($select);
         $option = $this->fixStepArgument($option);
         $this->getSession()->getPage()->selectFieldOption($select, $option);
+    }
+
+    /**
+     * @Given /^I am a "([^"]*)" of the group "([^"]*)"$/
+     */
+    public function iAmAMemberOfTheGroup($role, $group_name) {
+      $this->assertDrushCommandWithArgument('php-eval', "\"return db_query('SELECT nid FROM node WHERE title = \'$group_name\'')->fetchField();\"");
+      $option = $this->readDrushOutput();
+      $gid = trim(str_replace(array("'"), "", $option));
+      $user = $this->user;
+      $this->assertDrushCommandWithArgument('php-eval', "\"return db_query('SELECT uid FROM users WHERE name = \'$user->name\'')->fetchField();\"");
+      $option = $this->readDrushOutput();
+      $user_id = trim(str_replace(array("'"), "", $option));
+      $this->assertDrushCommandWithArgument('php-eval', "\"return db_query('SELECT rid FROM og_role WHERE name = \'$role\'')->fetchField();\"");
+      $option = $this->readDrushOutput();
+      $rid = trim(str_replace(array("'"), "", $option));
+      $this->assertDrushCommandWithArgument('og-add-user',"node $gid $rid $user_id");
     }
 
     /**

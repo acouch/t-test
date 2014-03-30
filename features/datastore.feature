@@ -26,4 +26,6 @@ Feature: Datastore
       Then I should see "Datastore dropped!"
       And I should see "Your file for this resource is not added to the datastore."
       And I should see "Farah"
+    When I click "Data API"
+      Then I should see "Example Query"
 

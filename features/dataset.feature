@@ -15,6 +15,9 @@ Feature: Datasets
     When I click "Creative Commons Attribution"
     Then I should see "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work"
 
+
+  Scenario: See Users datasets
+
   @javascript
   Scenario: Viewing the Dataset 
     Given I am on "/dataset/wisconsin-polling-places"
@@ -37,8 +40,8 @@ Feature: Datasets
     When I fill in "title" with "Test Group"
       And I press "Save"
     Then I should see "Test Group has been created"
-      And I am on "/node/add/dataset"
-    Then I should see "Create Dataset"
+    Given I am on "/node/add/dataset"
+      Then I should see "Create Dataset"
     When I fill in "title" with "Test Dataset"
       And I fill in "body[und][0][value]" with "Test description"
       And I select "cc-by" from "field_license[und][select]"

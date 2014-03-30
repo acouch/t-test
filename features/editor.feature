@@ -1,34 +1,16 @@
 Feature: Datasets 
 
-  @api @javascript
-  Scenario: Manage Groups 
-    Given I am logged in as a user with the "editor" role
-      And I am on "/group/data-explorer-examples"
-    When I click "Group" in the "toolbar" region
-    Then I should see "Add group members."
-    When I click "Add people"
-      And I wait for "3" seconds
-    Then I should see "ADD A GROUP MEMBER TO DATA EXPLORER EXAMPLES"
-    When I fill in "name" with "admin"
-      And I wait for "3" seconds
-      And I press "edit-submit"
-      And I wait for "3" seconds
-    Then I should see "admin has been added to the group Data Explorer Examples."
-    When I am on "/group/data-explorer-examples"
-    Then I should see "Members"
-    When I click "Members"
-    Then I should see "admin"
-    When I click "Group" in the "toolbar" region
-      And I wait for "1" seconds
-      And I click "People"
-    Then I should see "admin"
-    When I check "edit-views-bulk-operations-0"
-      And I select "action::og_membership_delete_action" from "edit-operation"
-      And I press "edit-submit--2"
-    Then I should see "Are you sure you want to perform Remove from group on the selected items?"
-    When I press "edit-submit"
-      And I wait for "1" seconds
-    Then I should see "Performed Remove from group"
+  # @api @javascript
+  # Scenario: View unpublished content 
+    # Given "Wisconsin Polling Places" is unpublished
+    # When I visit "dataset/wisconsin-polling-places" 
+    # Then I should see "Polling places in the state of Wisconsin"
+    # When I click "Edit"
+    # Then I should see "What are datasets?"
+
+  Scenario: Add a page
+
+  Scenario: Add a menu
 
   @api @javascript
   Scenario: Edit any group content 
