@@ -67,6 +67,52 @@ class FeatureContext extends DrupalContext
     }
 
     /**
+     * Copy of "I fill in" but doesn't escape "(".
+     *
+     * When using "I fill in" it escaped autocomplete fields node id. Just using
+     * the title wouldn't work. The following focuses on the field and selects
+     * the first dropdown.
+     *
+     * @Given /^I fill in the autocomplete field "([^"]*)" with "([^"]*)"$/
+     */
+    public function iFillInTheAutoFieldWith($field, $value) {
+      $session = $this->getSession();
+      $page = $session->getPage();
+      $xpath = $page->find('xpath', '//input[@name="' . $field . '"]');
+      $field = $this->fixStepArgument($field);
+      $value = $this->fixStepArgument($value);
+      // Focus means autocoplete will actually show up.
+      $this->getSession()->getDriver()->focus('//input[@name="' . $field . '"]');
+      $page->fillField($field, $value);
+      $this->iWaitForSeconds(1);
+      // Selects the first dropdown since there is no id or other way to
+      // reference the desired entry.
+      $title = $session->getPage()->find(
+          'xpath',
+          $session->getSelectorsHandler()->selectorToXpath('xpath', '//*[@class="reference-autocomplete"]')
+
+      );
+      $title->click();
+    }
+
+    /**
+     * @Given /^I empty the field "([^"]*)"$/
+     */
+    public function iEmptyTheField($locator) {
+      $session = $this->getSession();
+      $page = $session->getPage();
+      $field = $page->findField($locator);
+
+      if (null === $field) {
+          throw new ElementNotFoundException(
+              $this->getSession(), 'form field', 'id|name|label|value', $locator
+          );
+      }
+
+      $field->setValue("");
+    }
+
+    /**
      * Wait for the given number of seconds. ONLY USE FOR DEBUGGING!
      *
      * @Given /^I wait for "([^"]*)" seconds$/

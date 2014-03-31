@@ -3,7 +3,7 @@ Feature: Groups
   As a website user
   I need to be able to view the group pages
 
-  @api @now @javascript
+  @api @javascript
   Scenario: Join a group and edit group content as an Authenticated User
     Given I am logged in as a user with the "authenticated user" role
     When I visit "dataset/wisconsin-polling-places"
@@ -49,8 +49,8 @@ Feature: Groups
       Then I should see "Afghanistan Election Districts"
       And I should not see "Wisconsin Polling Places"
     When I click "country-afghanistan"
-      Then I should see "Wisconsin Polling Places"
-      And I should see "Afghanistan Election Districts"
+      Then I should see "Afghanistan Election Districts"
+      And I should see "Wisconsin Polling Places"
 
   @api @javascript
   Scenario: Manage a group as an Editor 
