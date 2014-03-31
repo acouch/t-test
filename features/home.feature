@@ -39,7 +39,6 @@ Feature: Homepage
     And I click "Add Dataset"
     Then I should see "Create Dataset"
 
-  @javascript
   Scenario: Test header region
     Given I am on the homepage
     Then I should see "Welcome"

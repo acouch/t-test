@@ -12,7 +12,7 @@ Feature: Datasets
 
   Scenario: Add a menu
 
-  @api @javascript
+  @api
   Scenario: Edit any group content 
     Given I am logged in as a user with the "editor" role
       And I am on "/group/data-explorer-examples"
@@ -22,7 +22,7 @@ Feature: Datasets
     When I click "Edit"
     Then I should see "Edit Group Data Explorer Examples"
 
-  @api @javascript
+  @api
   Scenario: Edit any page content 
     Given I am logged in as a user with the "editor" role
       And I am on "/about"
@@ -30,7 +30,7 @@ Feature: Datasets
     When I click "Edit"
     Then I should see "Edit Page About"
 
-  @api @javascript
+  @api
   Scenario: Edit any dataset content 
     Given I am logged in as a user with the "editor" role
       And I am on "/dataset/us-national-foreclosure-statistics-january-2012"
