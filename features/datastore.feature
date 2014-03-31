@@ -22,8 +22,6 @@ Feature: Datastore
     When I press "Delete"
       And I wait for "3" seconds
       Then I should see "399 items have been deleted."
-      And I wait for "3" seconds
-      And I should see "Error returned from datastore"
     When I click "Manage Datastore"
       And I click "Drop Datastore"
       And I press "Drop"
