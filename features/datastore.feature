@@ -23,6 +23,7 @@ Feature: Datastore
       And I wait for "3" seconds
       Then I should see "399 items have been deleted."
     When I click "Manage Datastore"
+      And I wait for "1" seconds
       And I click "Drop Datastore"
       And I press "Drop"
       Then I should see "Datastore dropped!"
