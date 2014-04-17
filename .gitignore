@@ -2,6 +2,9 @@
 *.phar
 composer.lock
 node_modules
+vender
+bin
+src
 selenium-server-standalone-2.3*.0.jar
 dkan/sites/default/files
 dkan/sites/default/settings.php
