@@ -2,8 +2,6 @@ language: php
 
 php:
   - 5.4
-env:
-  - WEBDRIVER=selenium
 
 mysql:
   database: dkan_travis 
@@ -36,7 +34,8 @@ before_script:
   - sleep 3
   - cd ../
 
-  - sh bin/run-"$WEBDRIVER".sh
+  - wget http://selenium.googlecode.com/files/selenium-server-standalone-2.35.0.jar
+  - java -jar selenium-server-standalone-2.35.0.jar -quiet -p 4444 -log shut_up_selenium &
   - sleep 5
 
 script:
