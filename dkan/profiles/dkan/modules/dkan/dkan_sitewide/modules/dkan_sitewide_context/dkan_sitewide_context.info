@@ -28,5 +28,5 @@ features[features_api][] = api:2
 version = "7.x-1.0-beta1+108-dev"
 core = "7.x"
 project = "dkan"
-datestamp = "1397756083"
+datestamp = "1397761749"
 
