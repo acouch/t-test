@@ -13,7 +13,7 @@ mysql:
 
 install:
   - npm install
-  - composer install
+  #- composer install
   - mysql -e 'create database dkan_travis;'
   - sudo apt-get update > /dev/null
   - sudo apt-get --quiet=2 install php5-cgi php5-curl php5-gd php5-mysql > /dev/null
@@ -25,9 +25,9 @@ install:
 
 before_script:
   # Install DKAN
-  - git clone --branch 7.x-1.x http://git.drupal.org/project/dkan.git
+  #- git clone --branch 7.x-1.x http://git.drupal.org/project/dkan.git
   - cd dkan
-  - drush make --prepare-install build-dkan.make --yes
+  #- drush make --prepare-install build-dkan.make --yes
   - drush si dkan --sites-subdir=default --db-url=mysql://root:@127.0.0.1/dkan_travis --account-name=admin --account-pass=admin  --site-name="DKAN" install_configure_form.update_status_module='array(FALSE,FALSE)' --yes
   - drush cc all --yes
   - drush --quiet --yes --root=$PWD --server=builtin runserver :8888 > /dev/null 2>&1 &
@@ -44,8 +44,8 @@ before_script:
   - sleep 5
 
 script:
-  - bin/behat features/datastore.feature
-#  - bin/behat features/dataset.feature
+ # - bin/behat features/datastore.feature
+  - bin/behat features/dataset.feature
 #  - bin/behat features/editor.feature
 #  - bin/behat features/groups.feature
 #  - bin/behat features/home.feature
