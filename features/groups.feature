@@ -17,7 +17,7 @@ Feature: Groups
     #When I click "Madison Polling Places"
     #Then I should see "edit"
 
-   @api
+   @api @javascript
    Scenario: Request to join a group as an Auth User
     Given I am logged in as a user with the "authenticated user" role
     When I visit "group/geospatial-data-explorer-examples"
@@ -53,25 +53,29 @@ Feature: Groups
   Scenario: Manage a group as an Editor 
     Given I am logged in as a user with the "editor" role
       And I am on "/group/data-explorer-examples"
+    Given users:
+      | name     | mail            | status |
+      | teo      | teo@rocks.com   | 1      |
+      | federica | fed@rocks.com   | 1      |
     When I click "Group" in the "toolbar" region
     Then I should see "Add group members."
     When I click "Add people"
       And I wait for "3" seconds
     Then I should see "ADD A GROUP MEMBER TO DATA EXPLORER EXAMPLES"
-    When I fill in "name" with "admin"
+    When I fill in "name" with "teo"
       And I wait for "3" seconds
       And I press "edit-submit"
       And I wait for "3" seconds
-    Then I should see "admin has been added to the group Data Explorer Examples."
+    Then I should see "teo has been added to the group Data Explorer Examples."
     When I am on "/group/data-explorer-examples"
     Then I should see "Members"
     When I click "Members"
-    Then I should see "admin"
+    Then I should see "teo"
     When I click "Group" in the "toolbar" region
       And I wait for "1" seconds
       And I click "People"
-    Then I should see "admin"
-    When I check "edit-views-bulk-operations-0"
+    Then I should see "teo"
+    When I check "edit-views-bulk-operations-1"
       And I select "action::og_membership_delete_action" from "edit-operation"
       And I press "edit-submit--2"
     Then I should see "Are you sure you want to perform Remove from group on the selected items?"

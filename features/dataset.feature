@@ -41,6 +41,7 @@ Feature: Datasets
       And I fill in the autocomplete field "field_resources[und][0][target_id]" with "Table"
       And I press "Finish"
       Then I should see "CSV file extracted and cleaned from source exce"
+      And I wait for "15" seconds
 
   @api @javascript
   Scenario: Create a dataset with a group as an authenticated user
