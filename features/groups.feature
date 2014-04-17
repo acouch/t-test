@@ -17,6 +17,7 @@ Feature: Groups
     #When I click "Madison Polling Places"
     #Then I should see "edit"
 
+   @api
    Scenario: Request to join a group as an Auth User
     Given I am logged in as a user with the "authenticated user" role
     When I visit "group/geospatial-data-explorer-examples"
