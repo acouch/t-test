@@ -1,6 +1,7 @@
 {
   "require": {
-    "drupal/drupal-extension": "*"
+    "drupal/drupal-extension": "*",
+    "instaclick/php-webdriver":  "~1.1"
   },
   "config": {
     "bin-dir": "bin/"
