@@ -17,26 +17,22 @@ Feature: Groups
     #When I click "Madison Polling Places"
     #Then I should see "edit"
 
+   Scenario: Request to join a group as an Auth User
+    Given I am logged in as a user with the "authenticated user" role
+    When I visit "group/geospatial-data-explorer-examples"
+      And I click "Request Membership to this Group"
+      Then I should see "Are you sure you want to join the group Geospatial Data Explorer Examples?"
+    #When I click "Join"
+      #Then I should have a pending request to join "Geospatial Data Explorer Examples" 
 
-
-    # Given I am a member of "Geospatial Data Explorer Examples" 
-    # When I visit "dataset/wisconsin-polling-places"
-    # Then I should see "edit"
-    # When I press "edit'
-    # Then I should see "What are datasets?"
-    # When I visit "dataset/wisconsin-polling-places"
-    # And I click "Madison Polling Places"
-    # Then I should see "edit"
-    # When I press "edit'
-    # Then I should see "What is data?"
-    #
   # Scenario: Join a group and view unpublished content as an Auth User
-    #
-    #
+    # Given I am logged in as a user with the "authenticated user" role
+    # And I am a "member" of the group "Geospatial Data Explorer Examples"
+    # When "Wisconsin Polling Places" is unpublished  
+    # And I visit "dataset/wisconsin-polling-places"
+    # Then I should see "Madison Polling Places" 
+
   # Scenario: Manage a group as an Auth User 
-    #
-    #
-  # Scenario: Request membership to a group as an Auth User 
     #
     #
 
@@ -81,7 +77,6 @@ Feature: Groups
     When I press "edit-submit"
       And I wait for "1" seconds
     Then I should see "Performed Remove from group"
-    #
     Given I am logged in as a user with the "authenticated user" role
       And I am on "/node/add/group"
     Then I should see "Create Group"

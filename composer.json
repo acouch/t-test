@@ -1,7 +1,7 @@
 {
   "require": {
     "drupal/drupal-extension": "*",
-    "instaclick/php-webdriver":  "~1.1"
+    "behat/mink-zombie-driver": "*"
   },
   "config": {
     "bin-dir": "bin/"

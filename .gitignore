@@ -1,6 +1,7 @@
 *.tgz
 *.phar
 composer.lock
+node_modules
 vendor
 bin
 dkan

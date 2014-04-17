@@ -7,7 +7,10 @@ Feature: Recline
   Scenario: Viewing map preview
     Given I am on "/dataset/wisconsin-polling-places"
       Then I should see "Polling places in the state of Wisconsin"
-    Given I click "Madison Polling Places"
+    Given I follow "Madison Polling Places"
+      And I wait for "3" seconds
+      Then I should see "This is a list and map of polling places in Madison, WI."
+      Then I should see "Original data"
       Then I should see "Polling_Places_Madison.csv"
     Given I click "Map"
       Then I should see "Latitude field"
@@ -15,7 +18,7 @@ Feature: Recline
       And I wait for "3" seconds
     Then I should see "Glendale Elementary School"
 
-  @javascript 
+  @javascript @api
   Scenario: Viewing graph preview
     Given I am on "/dataset/gold-prices-london-1950-2008-monthly"
       Then I should see "Monthly gold prices"

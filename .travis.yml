@@ -3,12 +3,16 @@ language: php
 php:
   - 5.4
 
+node_js:
+  - "0.11"
+
 mysql:
   database: dkan_travis 
   username: root
   encoding: utf8
 
 install:
+  - npm install
   - composer install
   - mysql -e 'create database dkan_travis;'
   - sudo apt-get update > /dev/null
@@ -17,6 +21,7 @@ install:
 # Install latest Drush 6.
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - composer global require --no-interaction drush/drush:6.*
+
 
 before_script:
   # Install DKAN

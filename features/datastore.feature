@@ -3,7 +3,7 @@ Feature: Datastore
   As a website user
   I need to be able to add and remove items from the datastore 
 
-  @api
+  @api @javascript
   Scenario: Adding and Removing items from the datastore
     Given I am logged in as a user with the "administrator" role
       And I am on "dataset/afghanistan-election-districts"   
