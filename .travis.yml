@@ -48,6 +48,6 @@ script:
  # - bin/behat features/dataset.feature
   - bin/behat features/editor.feature
   - bin/behat features/groups.feature
-#  - bin/behat features/home.feature
-#  - bin/behat features/search.feature
+  - bin/behat features/home.feature
+  - bin/behat features/search.feature
 #  - bin/behat features/recline.feature
