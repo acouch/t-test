@@ -1,0 +1,11 @@
+#!/bin/bash
+
+for g in $(find . | grep '.gitinfo')
+do
+  echo $g
+done
+
+for g in $(find dkan/. | grep '.git')
+do
+  echo $g
+done
