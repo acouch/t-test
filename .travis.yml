@@ -44,8 +44,8 @@ before_script:
   - sleep 5
 
 script:
- # - bin/behat features/datastore.feature
-  - bin/behat features/dataset.feature
+  - bin/behat features/datastore.feature
+  #- bin/behat features/dataset.feature
   #- bin/behat features/editor.feature
   #- bin/behat features/groups.feature
   #- bin/behat features/home.feature
