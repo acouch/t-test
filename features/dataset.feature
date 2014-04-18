@@ -32,7 +32,7 @@ Feature: Datasets
       And I wait for "5" seconds
       And I should see "Door Creek Church"
 
-  @api @javascript
+  @api @javascript @work
   Scenario: Changing the Resource on an existing Dataset 
     Given I am logged in as a user with the "editor" role
       And I am on "/dataset/wisconsin-polling-places"
@@ -42,10 +42,10 @@ Feature: Datasets
     When I empty the field "field_resources[und][0][target_id]"
       And I fill in the autocomplete field "field_resources[und][0][target_id]" with "Table"
       And I press "Finish"
-      And I wait for "10" seconds
       Then I should see "CSV file extracted and cleaned from source exce"
     When I click "Edit"
-      And I empty the field "field_resources[und][0][target_id]"
+      Then I should see "Resources"
+    When I empty the field "field_resources[und][0][target_id]"
       And I fill in the autocomplete field "field_resources[und][0][target_id]" with "Madison"
       And I press "Finish"
       Then I should see "Madison"
