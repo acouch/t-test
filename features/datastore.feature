@@ -10,7 +10,7 @@ Feature: Datastore
       And I click "District Names"
       Then I should see "Individual data records can be seen by clicking on each point."
     When I click "Manage Datastore"
-      Then I should see "Datastore Status"
+      Then I should see "DKAN Datastore File: Status"
     When I press "Import"
       And I wait for "3" seconds
       Then I should see "399 imported items total."
