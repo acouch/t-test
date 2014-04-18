@@ -25,7 +25,7 @@ install:
 
 before_script:
   # Install DKAN
-  #- git clone --branch 7.x-1.x http://git.drupal.org/project/dkan.git
+  #- git clone --branch 7.x-1.x http://git.drupal.org/project/dkan.git dkan_build
   - cd dkan
   #- drush make --prepare-install build-dkan.make --yes
   - drush si dkan --sites-subdir=default --db-url=mysql://root:@127.0.0.1/dkan_travis --account-name=admin --account-pass=admin  --site-name="DKAN" install_configure_form.update_status_module='array(FALSE,FALSE)' --yes
@@ -46,8 +46,8 @@ before_script:
 script:
   - bin/behat features/datastore.feature
   - bin/behat features/dataset.feature
-  - bin/behat features/editor.feature
-  - bin/behat features/groups.feature
-  - bin/behat features/home.feature
-  - bin/behat features/search.feature
-  - bin/behat features/recline.feature
+  #- bin/behat features/editor.feature
+  #- bin/behat features/groups.feature
+  #- bin/behat features/home.feature
+  #- bin/behat features/search.feature
+  #- bin/behat features/recline.feature
