@@ -17,7 +17,8 @@ Feature: Datastore
     When I click "Data API"
       Then I should see "Example Query"
     When I click "Manage Datastore"
-      And I click "Delete items"
+      Then I should see "DKAN Datastore File: Status"
+    When I click "Delete items"
       Then I should see "DKAN Datastore File: Status"
     When I press "Delete"
       And I wait for "3" seconds
