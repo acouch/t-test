@@ -38,9 +38,11 @@ Feature: Datasets
       And I am on "/dataset/wisconsin-polling-places"
       Then I should see "Edit"
     When I click "Edit"
-      And I empty the field "field_resources[und][0][target_id]"
+      Then I should see "Resources"
+    When I empty the field "field_resources[und][0][target_id]"
       And I fill in the autocomplete field "field_resources[und][0][target_id]" with "Table"
       And I press "Finish"
+      And I wait for "10" seconds
       Then I should see "CSV file extracted and cleaned from source exce"
     When I click "Edit"
       And I empty the field "field_resources[und][0][target_id]"
