@@ -17,9 +17,9 @@ features[views_view][] = front_page_group_list
 features[views_view][] = popular_tags
 
 
-; Information added by drush on 2014-04-17
-version = "7.x-1.0-beta1+108-dev"
+; Information added by drush on 2014-04-18
+version = "7.x-1.0-beta1+111-dev"
 core = "7.x"
 project = "dkan"
-datestamp = "1397761749"
+datestamp = "1397830307"
 

@@ -14,8 +14,8 @@ datestamp = "1380108399"
 
 
 
-; Information added by drush on 2014-04-17
+; Information added by drush on 2014-04-18
 version = "master-dev"
 project = "feeds_flatstore_processor"
-datestamp = "1397761774"
+datestamp = "1397830336"
 

@@ -106,8 +106,8 @@ settings[cdn_bootstrap] = 0
 ; plugins[panels][layouts] = layouts
 
 
-; Information added by drush on 2014-04-17
+; Information added by drush on 2014-04-18
 version = "unknown"
 project = "nuboot"
-datestamp = "1397761782"
+datestamp = "1397830345"
 
