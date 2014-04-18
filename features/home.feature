@@ -19,20 +19,20 @@ Feature: Homepage
 
   Scenario: Viewing footer
     Given I am on the homepage
-    Then I should see "powered by DKAN, a project of Nuams"
+    Then I should see "powered by DKAN"
 
   Scenario: Viewing tags
     Given I am on the homepage
     When I click "politics"
     Then I should see "Afghanistan Election Districts"
 
-  @api
+  @api @javascript
   Scenario: See "Add Dataset"
     Given I am logged in as a user with the "authenticated user" role
     And I am on the homepage
     Then I should see "Add Dataset"
 
-  @api
+  @api @javascript
   Scenario: See "Dataset Form"
     Given I am logged in as a user with the "authenticated user" role
     And I am on the homepage
@@ -43,9 +43,3 @@ Feature: Homepage
     Given I am on the homepage
     Then I should see "Welcome"
     And I should see "Login" in the "header" region
-
-  @api
-  Scenario: Logging into the site
-    Given I am logged in as a user with the "authenticated user" role
-    And I am on the homepage
-    Then I should see "Logout"
