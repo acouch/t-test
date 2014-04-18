@@ -36,6 +36,7 @@ Feature: Datasets
   Scenario: Changing the Resource on an existing Dataset 
     Given I am logged in as a user with the "editor" role
       And I am on "/dataset/wisconsin-polling-places"
+      Then I should see "Edit"
     When I click "Edit"
       And I empty the field "field_resources[und][0][target_id]"
       And I fill in the autocomplete field "field_resources[und][0][target_id]" with "Table"
