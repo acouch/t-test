@@ -3,9 +3,13 @@
 for g in $(find . | grep '.gitinfo')
 do
   echo $g
+  rm $g
 done
 
-for g in $(find dkan/. | grep '.git')
+for g in $(find . | grep '.git')
 do
-  echo $g
+  if [ $g != './remove-git' ]; then
+    echo $g
+    rm -r $g
+  fi
 done
